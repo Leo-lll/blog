@@ -1,0 +1,16 @@
+# Réglages du site. Ce fichier est le seul endroit à modifier pour ces points.
+
+nom = "Mon blog"                       # titre affiché en haut de chaque page (à changer)
+intro = "Quelques textes à partager."  # phrase sous le titre, sur la page d'accueil
+description = "Quelques textes à partager."  # description du flux RSS
+
+# Adresse publique du site, sans « / » final. Sur GitHub Pages elle est
+# renseignée automatiquement : laisse vide, sauf pour un nom de domaine à toi.
+url = ""
+
+# Compteur de visites, facultatif et désactivé tant que « goatcounter » est vide.
+# Crée un compte gratuit sur goatcounter.com, puis mets ici l'identifiant
+# choisi (par exemple "monblog" pour monblog.goatcounter.com).
+[compteur]
+goatcounter = ""
+mode = "image"   # "image" : aucun JavaScript  |  "script" : petit script d'environ 3,5 Ko

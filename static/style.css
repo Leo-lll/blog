@@ -1,0 +1,95 @@
+/* ==========================================================================
+   Style par défaut. Provisoire : on le règle ensemble ensuite.
+   Tout ce qui se règle d'un chiffre ou d'une couleur est ici, en haut.
+   ========================================================================== */
+:root {
+  --papier: #ffffff;        /* fond de page */
+  --encre: #1a1a1a;         /* texte et traits */
+  --discret: #767676;       /* dates, éléments secondaires */
+
+  --police: Georgia, "Times New Roman", serif;
+  --taille: 1.125rem;       /* taille du texte */
+  --interligne: 1.6;
+
+  --largeur-texte: 38rem;   /* largeur de la colonne de texte */
+  --marge-page: 1.25rem;    /* marge minimale à gauche et à droite */
+  --espace: 1.5rem;         /* espacement vertical de base */
+  --trait: 1px;             /* épaisseur des traits */
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--papier);
+  color: var(--encre);
+  font-family: var(--police);
+  font-size: var(--taille);
+  line-height: var(--interligne);
+}
+
+/* Colonne centrale */
+.entete, main {
+  width: min(100% - 2 * var(--marge-page), var(--largeur-texte));
+  margin-inline: auto;
+}
+
+/* En-tête du site */
+.entete {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding-block: var(--espace);
+  border-bottom: var(--trait) solid var(--encre);
+}
+.entete .nom { font-weight: bold; text-decoration: none; }
+.entete .rss { font-size: 0.85em; color: var(--discret); }
+
+main { padding-block: calc(var(--espace) * 1.5) calc(var(--espace) * 3); }
+
+a { color: inherit; text-underline-offset: 0.15em; }
+
+/* Page d'accueil */
+.intro { margin-top: 0; color: var(--discret); }
+.liste-articles { list-style: none; margin: calc(var(--espace) * 1.5) 0 0; padding: 0; }
+.liste-articles li { margin-bottom: 0.6em; }
+.liste-articles time {
+  display: inline-block;
+  min-width: 10.5em;
+  font-size: 0.85em;
+  color: var(--discret);
+}
+
+/* Article */
+.article h1 { font-size: 2rem; line-height: 1.2; margin: 0; }
+.article .date { margin: 0.5em 0 calc(var(--espace) * 2); font-size: 0.85em; color: var(--discret); }
+
+.corps > :first-child { margin-top: 0; }
+.corps h2 { font-size: 1.4rem; line-height: 1.25; margin: calc(var(--espace) * 2) 0 var(--espace); }
+.corps h3 { font-size: 1.15rem; margin: calc(var(--espace) * 1.5) 0 0.75rem; }
+.corps p, .corps ul, .corps ol { margin: 0 0 var(--espace); }
+.corps li { margin-bottom: 0.25em; }
+
+.corps img { display: block; max-width: 100%; height: auto; }
+.corps figure { margin: calc(var(--espace) * 1.5) 0; }
+.corps figcaption { margin-top: 0.5em; font-size: 0.85em; color: var(--discret); }
+
+.corps blockquote {
+  margin: 0 0 var(--espace);
+  padding-left: 1em;
+  border-left: var(--trait) solid var(--encre);
+}
+.corps blockquote > :last-child { margin-bottom: 0; }
+
+.corps hr { border: 0; border-top: var(--trait) solid var(--encre); margin: calc(var(--espace) * 2) 0; }
+
+.corps code { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 0.9em; }
+.corps pre {
+  margin: 0 0 var(--espace);
+  padding: 0.75em 1em;
+  overflow-x: auto;
+  border: var(--trait) solid var(--encre);
+}
+.corps pre code { font-size: 0.85em; }

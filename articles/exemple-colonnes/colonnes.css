@@ -1,0 +1,15 @@
+/* Style propre à l'article « exemple-colonnes » */
+
+/* Élargit la page pour ce seul article */
+:root { --largeur-texte: 56rem; }
+
+.colonnes {
+  column-count: 2;
+  column-gap: 2.5rem;
+  column-rule: var(--trait) solid var(--encre);
+}
+.colonnes p:first-child { margin-top: 0; }
+
+@media (max-width: 700px) {
+  .colonnes { column-count: 1; }
+}
